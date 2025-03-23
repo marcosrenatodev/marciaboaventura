@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+	Aerial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Macia Boaventura Advocacia</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body class="is-preload">
+    <div id="wrapper">
+      <div id="bg"></div>
+      <div id="overlay"></div>
+      <div id="main">
+        <!-- Header -->
+        <header id="header">
+          <h1>Marcia Boaventura</h1>
+          <p>
+            <strong
+              ><b
+                >Security Chief &nbsp;&bull;&nbsp; Cyborg &nbsp;&bull;&nbsp;
+                Never asked for this</b
+              ></strong
+            >
+          </p>
+          <nav>
+            <ul>
+              <li>
+                <a href="#" class="icon brands fa-instagram">
+									<span class="label">Instagram</span>
+								</a>
+              </li>
+              <li>
+                <a id="whatsapp" href="#" class="icon brands fa-whatsapp">
+									<span class="label">Whatsapp</span>
+								</a>
+              </li>
+              <li>
+                <a href="#" class="icon solid fa-envelope">
+									<span class="label">Email</span>
+								</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
+        <!-- Footer -->
+        <footer id="footer">
+          <span class="copyright"
+            >&copy; 2025 Marcia Boaventura - Advocacia. Design:
+            <a href="http://html5up.net">HTML5 UP</a>.</span
+          >
+        </footer>
+      </div>
+    </div>
+    <script>
+      window.onload = function () {
+        document.body.classList.remove("is-preload");
+      };
+      window.ontouchmove = function () {
+        return false;
+      };
+      window.onorientationchange = function () {
+        document.body.scrollTop = 0;
+      };
+      function abrirWhatsApp(numero, mensagem) {
+        mensagem = encodeURIComponent(mensagem);
+        const url = `https://wa.me/${numero}?text=${mensagem}`;
+        window.open(url, "_blank");
+      }
+
+      // Exemplo de uso:
+      document
+        .getElementById("whatsapp")
+        .addEventListener("click", function () {
+          const numeroWhatsApp = "554195572914";
+          const mensagemWhatsApp = "Olá, gostaria de mais informações."; // Substitua pela mensagem desejada
+
+          abrirWhatsApp(numeroWhatsApp, mensagemWhatsApp);
+        });
+    </script>
+  </body>
+</html>
