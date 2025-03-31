@@ -27,7 +27,10 @@
         <!-- Header -->
         <header id="header">
           <h1>Marcia Boaventura</h1>
-          <span class="apresentacao">Direito Civil &nbsp;&bull;&nbsp; Direito Penal &nbsp;&bull;&nbsp; Direito do Consumidor</span>
+          <span class="apresentacao"
+            >Direito Civil &nbsp;&bull;&nbsp; Direito Penal &nbsp;&bull;&nbsp;
+            Direito do Consumidor</span
+          >
           <nav>
             <ul>
               <li>
@@ -51,13 +54,55 @@
 
         <!-- Footer -->
         <footer id="footer">
-          <span class="copyright"
-            >&copy; 2025 Marcia Boaventura - Advocacia. Design:
-            <a href="http://html5up.net">HTML5 UP</a>.</span
-          >
+          <div>
+            <span>
+              <a href="#about" id="linkabout" class="icon solid fa-arrow-down">
+                <span class="label">Sobre Nós</span> Mais informações</a
+              ></span
+            ><br />
+            <span class="copyright"
+              >&copy; 2025 Marcia Boaventura - Advocacia. Design:
+              <a href="http://html5up.net">HTML5 UP</a>.</span
+            >
+          </div>
         </footer>
       </div>
     </div>
+    <!-- New Section -->
+    <section id="about">
+      <div id="wrapper">
+        <div>
+          <span>
+            <a href="#main" id="linkvoltar" class="icon solid fa-arrow-up">
+              <span class="label">Tela inicial</span> Voltar</a
+            ></span
+          ><br />
+        </div>
+        <div class="content" id="header">
+          <h1>Sobre Nós</h1>
+          <div class="about-container">
+            <div class="about-image">
+              <img src="/assets/css/images/marciaadv2.jpeg" alt="Sobre Nós" />
+            </div>
+            <div class="about-text">
+              <p>
+                Compromisso, Dedicação e Excelência na Advocacia. Nosso
+                escritório oferece um atendimento jurídico personalizado,
+                humanizado e estratégico. <br/>Acreditamos que cada caso é único e
+                merece uma abordagem individualizada, com total atenção às
+                necessidades de nossos clientes.<br/> Com uma equipe de advogados
+                altamente comprometidos, buscamos garantir a melhor solução para
+                cada situação, sempre focados na defesa dos direitos e
+                interesses de quem confia em nosso trabalho. <br/>Buscamos não apenas
+                a resolução de conflitos, mas também a segurança e tranquilidade
+                de nossos clientes, com ética, transparência e excelência. <br/>Entre
+                em contato e conte com uma advocacia eficiente e especializada.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <div id="modalContato" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
@@ -66,16 +111,18 @@
         <input type="text" id="nome" name="nome" required />
         <label for="assunto">Assunto:</label>
         <textarea id="assunto" name="assunto"></textarea>
-        <button class="icon brands fa-whatsapp" id="enviarWhatsApp"> Enviar mensagem</button>
+        <button class="icon brands fa-whatsapp" id="enviarWhatsApp">
+          Enviar mensagem
+        </button>
       </div>
     </div>
     <script>
       window.onload = function () {
         document.body.classList.remove("is-preload");
       };
-      window.ontouchmove = function () {
-        return false;
-      };
+      // window.ontouchmove = function () {
+      //   return false;
+      // };
       window.onorientationchange = function () {
         document.body.scrollTop = 0;
       };
@@ -103,8 +150,8 @@
         const assunto = document.getElementById("assunto").value;
         const numeroWhatsApp = "554195572914";
 
-        if (nome.trim() === '') {
-          alert('O nome é obrigatório.');
+        if (nome.trim() === "") {
+          alert("O nome é obrigatório.");
           return;
         }
 
@@ -118,8 +165,8 @@
         )}`;
         window.open(url, "_blank");
         modal.style.display = "none";
-        document.getElementById('nome').value = '';
-        document.getElementById('assunto').value = '';
+        document.getElementById("nome").value = "";
+        document.getElementById("assunto").value = "";
       };
     </script>
   </body>
