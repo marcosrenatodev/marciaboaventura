@@ -35,6 +35,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
+	overflow-y: scroll;
 }
 
 ol, ul {
@@ -80,6 +81,7 @@ input, select, textarea {
 
 	html {
 		box-sizing: border-box;
+		scroll-behavior: smooth;
 	}
 
 	*, *:before, *:after {
@@ -205,12 +207,13 @@ input, select, textarea {
 		-webkit-animation: wrapper 3s forwards;
 		-ms-animation: wrapper 3s forwards;
 		animation: wrapper 3s forwards;
-		height: 100%;
+		height: 100vh;
+		position: relative;
 		left: 0;
 		opacity: 0;
-		position: fixed;
 		top: 0;
 		width: 100%;
+		overflow: hidden;
 	}
 
 /* BG */
@@ -232,10 +235,10 @@ input, select, textarea {
 
 		background: var(--cor-tema) url("images/bg.jpg") left;
 		background-repeat: repeat-x;
-		height: 100%;
+		height: 100vh;
 		left: 0;
 		opacity: 1;
-		position: fixed;
+		position: relative;
 		top: 0;
 	}
 
@@ -371,9 +374,9 @@ input, select, textarea {
 /* Main */
 
 	#main {
-		height: 100%;
+		height: 100vh;
 		left: 0;
-		position: fixed;
+		position: absolute;
 		text-align: center;
 		top: 0;
 		width: 100%;
@@ -716,20 +719,20 @@ input, select, textarea {
 
 /* Footer */
 
-	#footer {
-		background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
-		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
-		background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
-		background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
-		bottom: 0;
-		cursor: default;
-		height: 6em;
-		left: 0;
-		line-height: 8em;
-		position: absolute;
-		text-align: center;
-		width: 100%;
-	}
+#footer {
+	background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
+	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
+	background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
+	background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
+	bottom: 0;
+	cursor: default;
+	height: 4.5em;
+	left: 0;
+	line-height: 2em;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+}
 
 /* Wide */
 
@@ -757,6 +760,7 @@ input, select, textarea {
 					-ms-transform: translate3d(-1500px,0,0);
 					transform: translate3d(-1500px,0,0);
 				}
+
 
 	}
 
@@ -822,6 +826,22 @@ input, select, textarea {
 			body, input, select, textarea {
 				font-size: 12pt;
 			}
+			/* Footer */
+
+	#footer {
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
+		background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
+		background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
+		bottom: 0;
+		cursor: default;
+		height: 6em;
+		left: 0;
+		line-height: 8em;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+	}
 
 		/* BG */
 
@@ -908,6 +928,22 @@ input, select, textarea {
 			body, input, select, textarea {
 				font-size: 11pt;
 			}
+			/* Footer */
+
+	#footer {
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
+		background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
+		background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
+		bottom: 0;
+		cursor: default;
+		height: 8em;
+		left: 0;
+		line-height: 2em;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+	}
 
 		/* BG */
 
@@ -1152,5 +1188,93 @@ input, select, textarea {
     }
 
 		p.apresentacao {
-			font-weight: bold;
+			font-weight: bolder;
 		}
+	/* Add styles for the new section */
+	#about {
+		padding: 30px 20px;
+		background-color: #f9f9f9;
+		background: var(--cor-tema) center left;
+		background-size: cover;
+		text-align: center;
+		min-height: 100vh;
+	}
+
+	#about .content {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	#about h2 {
+		font-size: 2em;
+		margin-bottom: 20px;
+	}
+
+	#about p {
+		font-size: 1.2em;
+		line-height: 1.6;
+		text-align: justify;
+	}
+
+	a#linkabout, a#linkvoltar {
+		font-weight: bold;
+	}
+/* Estilo para o título */
+#about h1 {
+  margin-top: 0;
+  padding-top: 20px;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+/* Estilo para o contêiner */
+.about-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
+  align-items: center; /* Alinha verticalmente os itens */
+  justify-content: space-between; /* Espaçamento entre os itens */
+  gap: 20px; /* Espaço entre os itens */
+  margin-top: 20px; /* Espaço entre o título e o contêiner */
+}
+
+/* Estilo para a imagem */
+.about-image {
+  flex: 1;
+  max-width: 50%; /* Limita a largura da imagem em telas largas */
+  text-align: center; /* Centraliza a imagem */
+}
+
+.about-image img {
+  width: 100%; /* Faz a imagem ocupar toda a largura do contêiner */
+  height: auto; /* Mantém a proporção da imagem */
+  border-radius: 10px; /* Adiciona bordas arredondadas */
+}
+
+/* Estilo para o texto */
+.about-text {
+  flex: 2; /* Faz o texto ocupar mais espaço que a imagem */
+  max-width: 80%; /* Limita a largura do texto em telas largas */
+  text-align: justify; /* Justifica o texto */
+}
+a#linkvoltar {
+	z-index: 10;
+}
+
+/* Ajuste para telas menores */
+@media screen and (max-width: 768px) {
+  .about-container {
+    flex-direction: column; /* Empilha os itens verticalmente */
+    text-align: center; /* Centraliza o texto */
+  }
+
+  .about-image,
+  .about-text {
+    max-width: 100%;
+		font-size: 0.82em; /* Faz os itens ocuparem toda a largura */
+  }
+
+  .about-image img {
+    width: 50%; /* Ajusta a largura da imagem em telas menores */
+    margin: 0 auto; /* Centraliza a imagem */
+  }
+}
