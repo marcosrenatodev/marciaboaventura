@@ -20,6 +20,18 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
   </head>
   <body class="is-preload">
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+      <div class="logo">
+        <img src="/assets/css/images/soh_logo.jpeg" alt="Logo" />
+      </div>
+      <button id="navbar-toggle" class="hamburger">&#9776;</button>
+      <ul id="navbar-menu">
+        <li><a href="#main">Início</a></li>
+        <li><a href="#about">Sobre Nós</a></li>
+        <li><a href="#footer">Contato</a></li>
+      </ul>
+    </nav>
     <div id="wrapper">
       <div id="bg"></div>
       <div id="overlay"></div>
@@ -27,9 +39,9 @@
         <!-- Header -->
         <header id="header">
           <h1>Marcia Boaventura</h1>
-          <span class="apresentacao"
+          <p class="apresentacao"
             >Direito Civil &nbsp;&bull;&nbsp; Direito Penal &nbsp;&bull;&nbsp;
-            Direito do Consumidor</span
+            Direito do Consumidor</
           >
           <nav>
             <ul>
@@ -57,8 +69,9 @@
           <div>
             <span>
               <a href="#about" id="linkabout" class="icon solid fa-arrow-down">
-                <span class="label">Sobre Nós</span> Mais informações</a
-              ></span
+                <span class="label">Sobre Nós</span> Mais informações
+                </a>
+                </span
             ><br />
             <span class="copyright"
               >&copy; 2025 Marcia Boaventura - Advocacia. Design:
@@ -120,12 +133,7 @@
       window.onload = function () {
         document.body.classList.remove("is-preload");
       };
-      // window.ontouchmove = function () {
-      //   return false;
-      // };
-      window.onorientationchange = function () {
-        document.body.scrollTop = 0;
-      };
+
       const modal = document.getElementById("modalContato");
       const btnAbrirModal = document.getElementById("abrirModal");
       const btnFecharModal = document.getElementsByClassName("close")[0];
@@ -167,6 +175,13 @@
         modal.style.display = "none";
         document.getElementById("nome").value = "";
         document.getElementById("assunto").value = "";
+      };
+
+      const navbarToggle = document.getElementById("navbar-toggle");
+      const navbarMenu = document.getElementById("navbar-menu");
+
+      navbarToggle.onclick = function () {
+        navbarMenu.classList.toggle("show");
       };
     </script>
   </body>
