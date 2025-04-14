@@ -20,6 +20,18 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
   </head>
   <body class="is-preload">
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+      <div class="logo">
+        <img src="/assets/css/images/soh_logo.jpeg" alt="Logo" />
+      </div>
+      <button id="navbar-toggle" class="hamburger">&#9776;</button>
+      <ul id="navbar-menu">
+        <li><a href="#main">Início</a></li>
+        <li><a href="#about">Sobre Nós</a></li>
+        <li><a href="#" class="abrirModal">Contato</a></li>
+      </ul>
+    </nav>
     <div id="wrapper">
       <div id="bg"></div>
       <div id="overlay"></div>
@@ -27,80 +39,76 @@
         <!-- Header -->
         <header id="header">
           <h1>Marcia Boaventura</h1>
-          <span class="apresentacao"
-            >Direito Civil &nbsp;&bull;&nbsp; Direito Penal &nbsp;&bull;&nbsp;
-            Direito do Consumidor</span
-          >
+          <p class="apresentacao">
+            Direito Civil &nbsp;&bull;&nbsp; Direito Penal &nbsp;&bull;&nbsp;
+            Direito do Consumidor
+          </p>
           <nav>
             <ul>
               <li>
-                <a href="#" class="icon brands fa-instagram">
+                <a href="https://www.instagram.com/adv.marciaboaventura" class="icon brands fa-instagram">
                   <span class="label">Instagram</span>
                 </a>
               </li>
               <li>
-                <a id="abrirModal" href="#" class="icon brands fa-whatsapp">
+                <a href="https://wa.me/5541997085626" class="icon brands fa-whatsapp">
                   <span class="label">Whatsapp</span>
                 </a>
               </li>
               <li>
-                <a href="#" class="icon solid fa-envelope">
+                <a href="mailto:contato@marciaboaventura.adv.br" class="icon solid fa-envelope">
                   <span class="label">Email</span>
                 </a>
               </li>
             </ul>
           </nav>
         </header>
-
-        <!-- Footer -->
-        <footer id="footer">
-          <div>
-            <span>
-              <a href="#about" id="linkabout" class="icon solid fa-arrow-down">
-                <span class="label">Sobre Nós</span> Mais informações</a
-              ></span
-            ><br />
-            <span class="copyright"
-              >&copy; 2025 Marcia Boaventura - Advocacia. Design:
-              <a href="http://html5up.net">HTML5 UP</a>.</span
-            >
-          </div>
-        </footer>
       </div>
     </div>
     <!-- New Section -->
     <section id="about">
       <div id="wrapper">
-        <div>
-          <span>
-            <a href="#main" id="linkvoltar" class="icon solid fa-arrow-up">
-              <span class="label">Tela inicial</span> Voltar</a
-            ></span
-          ><br />
-        </div>
         <div class="content" id="header">
           <h1>Sobre Nós</h1>
           <div class="about-container">
             <div class="about-image">
               <img src="/assets/css/images/marciaadv2.jpeg" alt="Sobre Nós" />
+              <figcaption>Marcia Boaventura</figcaption>
+              <figcaption>Advogada OAB/PR nº 129.081</figcaption>
             </div>
             <div class="about-text">
+              <p>Compromisso, Dedicação e Excelência na Advocacia.</p>
               <p>
-                Compromisso, Dedicação e Excelência na Advocacia. Nosso
-                escritório oferece um atendimento jurídico personalizado,
-                humanizado e estratégico. <br/>Acreditamos que cada caso é único e
-                merece uma abordagem individualizada, com total atenção às
-                necessidades de nossos clientes.<br/> Com uma equipe de advogados
-                altamente comprometidos, buscamos garantir a melhor solução para
-                cada situação, sempre focados na defesa dos direitos e
-                interesses de quem confia em nosso trabalho. <br/>Buscamos não apenas
-                a resolução de conflitos, mas também a segurança e tranquilidade
-                de nossos clientes, com ética, transparência e excelência. <br/>Entre
-                em contato e conte com uma advocacia eficiente e especializada.
+                Nosso escritório oferece um atendimento jurídico personalizado,
+                humanizado e estratégico. <br />Acreditamos que cada caso é
+                único e merece uma abordagem individualizada, com total atenção
+                às necessidades de nossos clientes.
               </p>
+              <p>
+                Com uma equipe de advogados altamente comprometidos, buscamos
+                garantir a melhor solução para cada situação, sempre focados na
+                defesa dos direitos e interesses de quem confia em nosso
+                trabalho.
+              </p>
+              <p>
+                Buscamos não apenas a resolução de conflitos, mas também a
+                segurança e tranquilidade de nossos clientes, com ética,
+                transparência e excelência.
+              </p>
+              <p>Entre em contato e conte com uma advocacia eficiente.</p>
             </div>
           </div>
         </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+          <div>
+            <span class="copyright">
+              &copy; 2025 Marcia Boaventura - Advocacia. Design:
+              <a href="http://html5up.net"> HTML5 UP</a>.</span
+            >
+          </div>
+        </footer>
       </div>
     </section>
     <div id="modalContato" class="modal">
@@ -120,20 +128,21 @@
       window.onload = function () {
         document.body.classList.remove("is-preload");
       };
-      // window.ontouchmove = function () {
-      //   return false;
-      // };
-      window.onorientationchange = function () {
-        document.body.scrollTop = 0;
-      };
+
       const modal = document.getElementById("modalContato");
-      const btnAbrirModal = document.getElementById("abrirModal");
+      const btnsAbrirModal = document.querySelectorAll(
+        ".abrirModal"
+      );
       const btnFecharModal = document.getElementsByClassName("close")[0];
       const btnEnviarWhatsApp = document.getElementById("enviarWhatsApp");
-
-      btnAbrirModal.onclick = function () {
+      function abrirModal() {
         modal.style.display = "block";
-      };
+      }
+      btnsAbrirModal.forEach((btn) => {
+        btn.onclick = function () {
+          abrirModal()
+        };
+      });
 
       btnFecharModal.onclick = function () {
         modal.style.display = "none";
@@ -148,7 +157,7 @@
       btnEnviarWhatsApp.onclick = function () {
         const nome = document.getElementById("nome").value;
         const assunto = document.getElementById("assunto").value;
-        const numeroWhatsApp = "554195572914";
+        const numeroWhatsApp = "5541997085626";
 
         if (nome.trim() === "") {
           alert("O nome é obrigatório.");
@@ -168,6 +177,29 @@
         document.getElementById("nome").value = "";
         document.getElementById("assunto").value = "";
       };
+
+      const navbarToggle = document.getElementById("navbar-toggle");
+      const navbarMenu = document.getElementById("navbar-menu");
+
+      navbarToggle.onclick = function () {
+        navbarMenu.classList.toggle("show");
+      };
+      const navbarLinks = document.querySelectorAll("#navbar-menu a");
+
+      navbarLinks.forEach((link) => {
+        link.onclick = function () {
+          navbarMenu.classList.remove("show");
+          if (link.classList.contains("abrirModal")) {
+            abrirModal()
+          }
+        };
+      });
+
+      window.ontouchmove = function () {
+        navbarMenu.classList.remove("show");
+      };
     </script>
+    <a href="https://wa.me/5541997085626" class="icon brands fa-whatsapp fa-2x" target="_blank" id="whatsapp-icon">
+    </a>
   </body>
 </html>
