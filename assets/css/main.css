@@ -891,12 +891,12 @@ a:hover {
 	color: #fff;
 	text-decoration: none;
 	font-weight: bold;
+	text-wrap: pretty;
 	transition: color 0.3s ease;
 }
 
 #navbar ul li a:hover {
 	color: #f1f1f1;
-	/* Ajusta a cor ao passar o mouse */
 }
 
 #navbar .logo {
@@ -919,6 +919,53 @@ a:hover {
 	cursor: pointer;
 	z-index: 1001;
 	/* Garante que o botão fique acima de outros elementos */
+}
+
+/* Add styles for the new section of cards */
+#areas-atuacao {
+	text-align: center;
+}
+
+.cards-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 20px;
+	gap: 20px;
+}
+
+.card {
+	background-color: #f9f9f9;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	width: 300px;
+	padding: 20px;
+	text-align: center;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+	font-size: 1.5em;
+	margin-bottom: 15px;
+	color: var(--cor-tema);
+}
+
+.card p {
+	font-size: 1em;
+	line-height: 1.6;
+	color: #333;
+}
+
+.card .icon {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: var(--cor-tema);
 }
 
 /* Wide */
@@ -1019,23 +1066,6 @@ a:hover {
 	select,
 	textarea {
 		font-size: 12pt;
-	}
-
-	/* Footer */
-
-	#footer {
-		background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 75%);
-		background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 75%);
-		background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 75%);
-		background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 75%);
-		bottom: 0;
-		cursor: default;
-		height: 6em;
-		left: 0;
-		line-height: 8em;
-		position: absolute;
-		text-align: center;
-		width: 100%;
 	}
 
 	/* BG */
@@ -1379,34 +1409,34 @@ p.apresentacao {
 }
 
 /* Add styles for the new section */
-#about {
+.secao {
 	padding: 0;
 	background-color: #f9f9f9;
 	background: var(--cor-tema) center left;
 	background-size: cover;
 	text-align: center;
 	min-height: 100vh;
-	padding-top: 60px;
+	padding-top: 80px;
 }
 
-#about .header {
+.secao .header {
 	max-width: 100%;
 	margin: 0 auto;
 }
 
-#about h2 {
+.secao h2 {
 	font-size: 2em;
 	margin-bottom: 20px;
 }
 
-#about p {
+.secao p {
 	font-size: 1.0em;
 	line-height: 1.6;
 	text-align: justify;
 }
 
 /* Estilo para o título */
-#about h1 {
+.secao h1 {
 	margin-top: 0;
 	/* Garante que o título não tenha margem adicional */
 	padding-top: 20px;
@@ -1418,15 +1448,10 @@ p.apresentacao {
 .about-container {
 	display: flex;
 	flex-wrap: wrap;
-	/* Permite que os itens quebrem linha em telas menores */
 	align-items: center;
-	/* Alinha verticalmente os itens */
 	justify-content: space-between;
-	/* Espaçamento entre os itens */
 	gap: 20px;
-	/* Espaço entre os itens */
 	margin-top: 20px;
-	/* Espaço entre o título e o contêiner */
 }
 
 /* Estilo para a imagem */
@@ -1466,6 +1491,10 @@ p.apresentacao {
 
 /* Ajuste para telas menores */
 @media screen and (max-width: 768px) {
+
+	.secao {
+		padding-top: 60px;
+	}
 
 	.modal-content {
 		margin: 50% auto;
@@ -1516,6 +1545,16 @@ p.apresentacao {
 		padding-right: 3%;
 		/* Mostra o menu quando ativado */
 	}
+
+	.cards-container {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.card {
+		width: 85%;
+	}
+
 }
 
 #whatsapp-icon {
