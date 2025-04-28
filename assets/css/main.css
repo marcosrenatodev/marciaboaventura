@@ -10,6 +10,7 @@
 :root {
 	--cor-tema: #3b0912;
 	--verde-whatsapp: #25D366;
+	--acima-outros: 1005
 
 }
 
@@ -865,7 +866,7 @@ a:hover {
 	width: 100%;
 	background-color: rgba(59, 9, 18, 0.9);
 	color: white;
-	z-index: 1000;
+	z-index: 998;
 	padding: 10px 20px;
 	display: flex;
 	align-items: center;
@@ -943,11 +944,102 @@ a:hover {
 	padding: 20px;
 	text-align: center;
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	cursor: pointer; /* Indica que o cartão é clicável */
+	position: relative; /* Necessário para o conteúdo expandido */
 }
 
 .card:hover {
 	transform: translateY(-10px);
 	box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card.expanded {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(1.0);
+	width: 80%;
+	height: 90%;
+	background-color: #fff;
+	z-index: var(--acima-outros);
+	padding: 40px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card.expanded .expanded-content {
+	display: block;
+}
+.card.expanded strong {
+  font-weight: bold;
+}
+.card.expanded i.original,
+.card.expanded h3.original,
+.card.expanded p {
+	display: none;
+}
+
+.card.expanded .close-card {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background: none;
+	border: none;
+	font-size: 1.5em;
+	cursor: pointer;
+	color: var(--cor-tema);
+}
+
+.card.expanded .card-header {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 10px;
+	margin-bottom: 5px;
+}
+
+.card.expanded .card-header i {
+	font-size: 2em;
+	color: var(--cor-tema);
+}
+
+.card.expanded .card-header h3 {
+	font-size: 2em;
+	margin: 0;
+	margin-bottom: 15px;
+	color: var(--cor-tema);
+	font-weight: bold;
+}
+
+.expanded-content li {
+	font-size: 1.2em;
+	text-align: justify;
+}
+
+@media screen and (max-width: 768px) {
+
+
+	.card:hover {
+		transform: none;
+		box-shadow: none;
+	}
+	.card.expanded {
+		position: fixed;
+		transform: translate(-50%, -50%);
+		top: 50%;
+		left: 50%;
+		width: 90%;
+		height: auto;
+		padding: 20px;
+		overflow: auto;
+	}
+
+	.card.expanded .close-card {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		font-size: 2.5em;
+		z-index: var(--acima-outros);
+	}
 }
 
 .card h3 {
@@ -966,6 +1058,18 @@ a:hover {
   font-size: 2.5em;
   margin-bottom: 15px;
   color: var(--cor-tema);
+}
+
+.card .expanded-content {
+	display: none; /* Esconde o conteúdo adicional por padrão */
+	margin-top: 0px;
+	text-align: left;
+	font-size: 0.9em;
+	color: #333;
+}
+
+.card.expanded .expanded-content {
+	display: block;
 }
 
 /* Wide */
@@ -1471,22 +1575,15 @@ p.apresentacao {
 
 .about-image img {
 	width: 80%;
-	/* Faz a imagem ocupar toda a largura do contêiner */
 	height: auto;
-	/* Mantém a proporção da imagem */
 	border-radius: 10px;
-	/* Adiciona bordas arredondadas */
 }
 
-/* Estilo para o texto */
 .about-text {
 	flex: 2;
-	/* Faz o texto ocupar mais espaço que a imagem */
 	max-width: 60%;
-	/* Limita a largura do texto em telas largas */
 	max-height: 70%;
 	text-align: justify;
-	/* Justifica o texto */
 }
 
 /* Ajuste para telas menores */
@@ -1561,7 +1658,7 @@ p.apresentacao {
 	position: fixed;
 	bottom: 20px;
 	right: 20px;
-	z-index: 1000;
+	z-index: var(--acima-outros);
 	width: 60px;
 	height: 60px;
 	background-color: var(--verde-whatsapp);
@@ -1576,3 +1673,4 @@ p.apresentacao {
 #whatsapp-icon:hover {
 	transform: scale(1.1);
 }
+

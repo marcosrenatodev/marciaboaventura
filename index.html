@@ -18,6 +18,22 @@
     /></noscript>
 
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <style>
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .card-header h3 {
+        margin: 0;
+      }
+      .close-card {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body class="is-preload">
     <!-- Navigation Bar -->
@@ -116,30 +132,67 @@
         <div class="header">
           <h1>Áreas de Atuação</h1>
           <div class="cards-container">
-            <div class="card">
-              <i class="icon solid fa-gavel"></i>
-              <h3>Direito Civil</h3>
+            <div class="card" id="card-direito-civil">
+              <i class="icon solid fa-gavel original"></i>
+              <h3 class="original">Direito Civil</h3>
               <p>
                 Atuamos em questões contratuais, indenizações, direito de
                 família e sucessões, sempre com foco na solução mais adequada
                 para nossos clientes.
               </p>
+              <div class="expanded-content">
+                <button class="close-card">&times;</button>
+                <div class="card-header">
+                  <i class="icon solid fa-gavel"></i>
+                  <h3>Direito Civil</h3>
+                </div>
+                <p>No Direito Civil, o escritório oferece serviços estratégicos para lidar com diversas questões legais, incluindo:</p>
+                <ul>
+                  <li><strong>Família:</strong> Atuação em processos de divórcio, guarda de filhos, pensão alimentícia e partilha de bens, buscando soluções que priorizem o bem-estar das partes envolvidas.</li>
+                  <li><strong>Obrigações:</strong> Assessoria jurídica em contratos, acordos de pagamento e execuções de dívidas, com o objetivo de proteger os interesses de quem busca uma solução justa.</li>
+                  <li><strong>Responsabilidade Civil:</strong> Atuação em casos de indenização por danos materiais e morais, com foco na compensação justa para quem teve seus direitos violados.</li>
+                </ul>
+              </div>
             </div>
-            <div class="card">
-              <i class="icon solid fa-handshake"></i>
-              <h3>Direito do Consumidor</h3>
+            <div class="card" id="card-direito-consumidor">
+              <i class="icon solid fa-handshake original"></i>
+              <h3 class="original">Direito do Consumidor</h3>
               <p>
                 Proteção dos direitos do consumidor em casos de práticas
                 abusivas, cobranças indevidas e litígios com fornecedores.
               </p>
+              <div class="expanded-content">
+                <button class="close-card">&times;</button>
+                <div class="card-header">
+                  <i class="icon solid fa-handshake"></i>
+                  <h3>Direito do Consumidor</h3>
+                </div>
+                <ul>
+                  <li>No <strong>Direito do Consumidor </strong> , o escritório oferece consultoria e assessoria jurídica especializada para proteger os direitos dos consumidores.</li>
+                  <li> A atuação abrange casos relacionados a <strong>vícios e defeitos de produtos</strong>, <strong>práticas comerciais abusivas</strong>, <strong>reclamações contra empresas</strong> e <strong>indenizações</strong>.</li>
+                  <li>O compromisso é garantir que os consumidores recebam o tratamento justo e adequado, com foco na reparação de eventuais danos e na defesa de seus direitos.</li>
+                </ul>
+              </div>
             </div>
-            <div class="card">
-              <i class="icon solid fa-balance-scale"></i>
-              <h3>Direito Penal</h3>
+            <div class="card" id="card-direito-penal">
+              <i class="icon solid fa-balance-scale original"></i>
+              <h3 class="original">Direito Penal</h3>
               <p>
-                Defesa em processos criminais, acompanhamento em inquéritos e
-                consultoria jurídica para garantir os direitos fundamentais.
+                Defesa em processos criminais, acompanhamento em inquéritos e consultoria
+                jurídica para garantir os direitos fundamentais.
               </p>
+              <div class="expanded-content">
+                <button class="close-card">&times;</button>
+                <div class="card-header">
+                  <i class="icon solid fa-balance-scale"></i>
+                  <h3>Direito Penal</h3>
+                </div>
+                <p>Atuamos em:</p>
+                <ul>
+                  <li>No <strong>Direito Penal</strong>, a defesa é conduzida com dedicação e ética, abrangendo todas as fases do processo penal. </li>
+                  <li>O escritório lida com casos de <strong>crimes contra a honra</strong>, <strong>crimes patrimoniais</strong>, <strong> crimes ambientais</strong> e <strong>crimes de trânsito</strong>, sempre com o objetivo de garantir uma defesa sólida, respeitando os direitos fundamentais do acusado e buscando as melhores soluções possíveis.</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -241,6 +294,29 @@
       window.ontouchmove = function () {
         navbarMenu.classList.remove("show");
       };
+
+      function configurarCartaoExpandido(cardId) {
+        const card = document.getElementById(cardId);
+        const closeButton = card.querySelector(".close-card");
+
+        card.onclick = function (event) {
+          if (!card.classList.contains("expanded")) {
+            card.classList.add("expanded");
+          }
+        };
+
+        // Fecha o cartão ao clicar no botão de fechar
+        closeButton.onclick = function (event) {
+          event.stopPropagation(); // Impede que o clique no botão reabra o cartão
+          card.classList.remove("expanded");
+        };
+
+      }
+
+      // Configurar os cartões
+      configurarCartaoExpandido("card-direito-civil");
+      configurarCartaoExpandido("card-direito-consumidor");
+      configurarCartaoExpandido("card-direito-penal");
     </script>
     <a
       href="https://wa.me/5541997085626"
