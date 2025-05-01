@@ -1589,9 +1589,14 @@ p.apresentacao {
 /* Ajuste para telas menores */
 @media screen and (max-width: 768px) {
 
+	p.apresentacao {
+		font-size: 1em;
+		font-weight: 900;
+	}
 	.secao {
 		padding-top: 60px;
 	}
+
 
 	.modal-content {
 		margin: 50% auto;
