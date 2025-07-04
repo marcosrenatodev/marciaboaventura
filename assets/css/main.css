@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 @import url("fontawesome-all.min.css");
 
 /*
@@ -121,11 +122,9 @@ body {
 	line-height: 1;
 	overflow-y: scroll;
 	padding-top: 0;
-	/* Remove o espaço adicional para a navbar */
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	/* Garante que o conteúdo ocupe toda a altura da tela */
 }
 
 ol,
@@ -239,7 +238,7 @@ a {
 	-webkit-transition: border-color 0.2s ease-in-out;
 	-ms-transition: border-color 0.2s ease-in-out;
 	transition: border-color 0.2s ease-in-out;
-	border-bottom: dotted 1px;
+	border-bottom: 1px;
 	color: inherit;
 	outline: 0;
 	text-decoration: none;
@@ -843,18 +842,142 @@ a:hover {
 /* Footer */
 
 #footer {
-	background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 75%);
-	background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 75%);
-	background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 75%);
-	background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 75%);
-	bottom: 0;
-	cursor: default;
-	height: 6em;
-	left: 0;
-	line-height: 8em;
-	position: absolute;
+	margin-top: auto;
+	background-color: rgba(59, 9, 18, 0.9);
+	color: white;
 	text-align: center;
+	padding: 0px 40px;
+	bottom: 0;
+	left: 0;
 	width: 100%;
+	z-index: 999;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#footer .footer-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	width: 90%;
+	padding: 20px;
+}
+
+#footer .footer-top .logo{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+#footer .footer-top .logo img {
+	height: 40px;
+	border-radius: 5px;
+}
+
+#footer .footer-top .logo .logo-text {
+	font-family: 'Poppins', sans-serif;
+	text-transform: uppercase;
+	font-weight: 300;
+	font-size: 20px;
+	letter-spacing: 4px;
+	color: #ffffff;
+	line-height: 1.2;
+}
+
+#footer .footer-top .logo span {
+	display: block;
+	font-size: 14px;
+	letter-spacing: 6px;
+	color: #e0e0e0;
+	margin-top: 5px;
+	text-align: start;
+}
+
+#footer .footer-bottom {
+	margin-top: 20px; /* Espaço entre o footer-top e footer-bottom */
+	font-size: 0.9em;
+	text-align: center;
+}
+
+#footer .footer-bottom a {
+	color: #f1f1f1;
+	text-decoration: none;
+}
+
+#footer .footer-bottom a:hover {
+	text-decoration: underline;
+}
+
+#footer .footer-top .contact-info {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 0px;
+}
+
+#footer .footer-top .contact-info a {
+	display: flex;
+	align-items: center; /* Alinha o ícone e o texto verticalmente */
+	gap: 8px; /* Espaço entre o ícone e o texto */
+	color: #f1f1f1;
+	text-decoration: none;
+	font-size: 0.9em;
+	transition: color 0.3s ease;
+}
+
+#footer .footer-top .contact-info h3 {
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+#footer .footer-top .contact-info a:hover {
+	color: #ddd;
+}
+
+@media screen and (max-width: 768px) {
+	#footer {
+		padding: 15px 10px;
+	}
+
+	#footer .footer-top {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	#footer .footer-top .contact-info {
+		align-items: center;
+		gap: 10px;
+	}
+
+	#footer .footer-bottom {
+			margin-top: 15px;
+	}
+
+	#footer .footer-top .logo {
+			flex-direction: row;
+			align-items: center;
+			gap: 8px;
+	}
+
+	#footer .footer-top .logo img {
+			height: 40px; /* mesma altura do PC */
+			width: auto; /* garante a proporção */
+	}
+
+	#footer .footer-top .logo .logo-text {
+			font-size: 14px;
+			letter-spacing: 3px;
+	}
+
+	#footer .footer-top .logo span {
+			font-size: 12px;
+			letter-spacing: 4px;
+			text-align: start;
+	}
 }
 
 
