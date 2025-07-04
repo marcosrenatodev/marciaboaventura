@@ -1063,7 +1063,7 @@ a:hover {
 	border: 1px solid #ddd;
 	border-radius: 10px;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	width: 300px;
+	width: 285px;
 	padding: 20px;
 	text-align: center;
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1768,7 +1768,6 @@ p.apresentacao {
 		display: flex;
 		text-align: end;
 		padding-right: 3%;
-		/* Mostra o menu quando ativado */
 	}
 
 	.cards-container {
@@ -1779,6 +1778,10 @@ p.apresentacao {
 	.card {
 		width: 85%;
 	}
+
+  .cards-container .card:last-child {
+    margin-bottom: 50px;
+  }
 
 }
 
