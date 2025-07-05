@@ -48,6 +48,12 @@ Primeiro, clone o repositório para sua máquina local e navegue até o diretór
 git clone https://github.com/marcosrenatodev/marciaboaventura
 cd marciaboaventura
 ```
+### 2. Rodando
+
+Como é um projeto HTML + CSS +JS, basta abrir o `index.html` com o seu navegador de preferência.
+
+Caso esteja utilizando o VS Code, clique com o botão direto no corpo do arquio `index.html` e escolha a opção `Open with live server` (também irá abrir no navegador)
+
 ## Contato
 
 Para dúvidas ou mais informações, sinta-se à vontade para entrar em contato.
