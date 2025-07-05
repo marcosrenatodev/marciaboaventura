@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Libertinus+Mono&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 @import url("fontawesome-all.min.css");
 
 /*
@@ -226,9 +227,9 @@ input,
 select,
 textarea {
 	color: #fff;
-	font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Playfair Display", serif;
 	font-size: 15pt;
-	font-weight: 300 !important;
+	font-weight: 100 !important;
 	letter-spacing: -0.025em;
 	line-height: 1.75em;
 }
@@ -327,7 +328,7 @@ a:hover {
 	-webkit-animation: wrapper 3s forwards;
 	-ms-animation: wrapper 3s forwards;
 	animation: wrapper 3s forwards;
-	height: 100vh;
+	min-height: 100vh;
 	position: relative;
 	left: 0;
 	opacity: 0;
@@ -335,7 +336,6 @@ a:hover {
 	width: 100%;
 	overflow: hidden;
 	flex: 1;
-	/* Faz o conteúdo principal ocupar o espaço disponível */
 }
 
 /* BG */
@@ -684,9 +684,10 @@ a:hover {
 
 .header h1 {
 	font-size: 4.35em;
-	font-weight: 900;
+	font-weight: 600;
 	letter-spacing: -0.035em;
 	line-height: 1em;
+  font-family: "Playfair Display", serif;
 }
 
 .header p {
@@ -1674,7 +1675,6 @@ p.apresentacao {
 /* Estilo para o contêiner */
 .about-container {
 	display: flex;
-	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
 	gap: 20px;
@@ -1702,11 +1702,40 @@ p.apresentacao {
 	border-radius: 10px;
 }
 
+.about-image-column {
+	flex: 1; /* This will make the column take available space */
+	display: flex; /* Make it a flex container */
+	flex-direction: column; /* Stack the images vertically */
+	gap: 20px; /* Space between the two images in the column */
+}
+
+/* Styles for images within the column */
+.about-image-column .about-image {
+    flex: 1; /* Each image in the column takes equal space */
+    max-width: 100%; /* Ensure they take full width of their column */
+}
+
+.about-image-column .about-image img {
+    width: 100%; /* Make images within the column fill their container */
+    height: auto;
+    border-radius: 10px;
+}
+
 .about-text {
 	flex: 2;
 	max-width: 60%;
 	max-height: 70%;
 	text-align: justify;
+	font-family: 'Poppins', sans-serif;
+	background-color: rgb(88, 35, 44);
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+	border: #b07937 solid 1px;
+}
+
+.about-text p {
+	font-weight: lighter;
 }
 
 /* Ajuste para telas menores */
@@ -1726,7 +1755,7 @@ p.apresentacao {
 	}
 
 	.about-container {
-		flex-direction: column;
+		flex-direction: column-reverse;
 		/* Empilha os itens verticalmente */
 		text-align: center;
 		/* Centraliza o texto */
