@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Libertinus+Mono&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 @import url("fontawesome-all.min.css");
 
 /*
@@ -121,11 +123,9 @@ body {
 	line-height: 1;
 	overflow-y: scroll;
 	padding-top: 0;
-	/* Remove o espaço adicional para a navbar */
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	/* Garante que o conteúdo ocupe toda a altura da tela */
 }
 
 ol,
@@ -227,9 +227,9 @@ input,
 select,
 textarea {
 	color: #fff;
-	font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Playfair Display", serif;
 	font-size: 15pt;
-	font-weight: 300 !important;
+	font-weight: 100 !important;
 	letter-spacing: -0.025em;
 	line-height: 1.75em;
 }
@@ -239,7 +239,7 @@ a {
 	-webkit-transition: border-color 0.2s ease-in-out;
 	-ms-transition: border-color 0.2s ease-in-out;
 	transition: border-color 0.2s ease-in-out;
-	border-bottom: dotted 1px;
+	border-bottom: 1px;
 	color: inherit;
 	outline: 0;
 	text-decoration: none;
@@ -328,7 +328,7 @@ a:hover {
 	-webkit-animation: wrapper 3s forwards;
 	-ms-animation: wrapper 3s forwards;
 	animation: wrapper 3s forwards;
-	height: 100vh;
+	min-height: 100vh;
 	position: relative;
 	left: 0;
 	opacity: 0;
@@ -336,7 +336,6 @@ a:hover {
 	width: 100%;
 	overflow: hidden;
 	flex: 1;
-	/* Faz o conteúdo principal ocupar o espaço disponível */
 }
 
 /* BG */
@@ -685,9 +684,10 @@ a:hover {
 
 .header h1 {
 	font-size: 4.35em;
-	font-weight: 900;
+	font-weight: 600;
 	letter-spacing: -0.035em;
 	line-height: 1em;
+  font-family: "Playfair Display", serif;
 }
 
 .header p {
@@ -843,18 +843,142 @@ a:hover {
 /* Footer */
 
 #footer {
-	background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 75%);
-	background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 75%);
-	background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 75%);
-	background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 75%);
-	bottom: 0;
-	cursor: default;
-	height: 6em;
-	left: 0;
-	line-height: 8em;
-	position: absolute;
+	margin-top: auto;
+	background-color: rgba(59, 9, 18, 0.9);
+	color: white;
 	text-align: center;
+	padding: 0px 40px;
+	bottom: 0;
+	left: 0;
 	width: 100%;
+	z-index: 999;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#footer .footer-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	width: 90%;
+	padding: 20px;
+}
+
+#footer .footer-top .logo{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+#footer .footer-top .logo img {
+	height: 40px;
+	border-radius: 5px;
+}
+
+#footer .footer-top .logo .logo-text {
+	font-family: 'Poppins', sans-serif;
+	text-transform: uppercase;
+	font-weight: 300;
+	font-size: 20px;
+	letter-spacing: 4px;
+	color: #ffffff;
+	line-height: 1.2;
+}
+
+#footer .footer-top .logo span {
+	display: block;
+	font-size: 14px;
+	letter-spacing: 6px;
+	color: #e0e0e0;
+	margin-top: 5px;
+	text-align: start;
+}
+
+#footer .footer-bottom {
+	margin-top: 20px; /* Espaço entre o footer-top e footer-bottom */
+	font-size: 0.9em;
+	text-align: center;
+}
+
+#footer .footer-bottom a {
+	color: #f1f1f1;
+	text-decoration: none;
+}
+
+#footer .footer-bottom a:hover {
+	text-decoration: underline;
+}
+
+#footer .footer-top .contact-info {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 0px;
+}
+
+#footer .footer-top .contact-info a {
+	display: flex;
+	align-items: center; /* Alinha o ícone e o texto verticalmente */
+	gap: 8px; /* Espaço entre o ícone e o texto */
+	color: #f1f1f1;
+	text-decoration: none;
+	font-size: 0.9em;
+	transition: color 0.3s ease;
+}
+
+#footer .footer-top .contact-info h3 {
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+#footer .footer-top .contact-info a:hover {
+	color: #ddd;
+}
+
+@media screen and (max-width: 768px) {
+	#footer {
+		padding: 15px 10px;
+	}
+
+	#footer .footer-top {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	#footer .footer-top .contact-info {
+		align-items: center;
+		gap: 10px;
+	}
+
+	#footer .footer-bottom {
+			margin-top: 15px;
+	}
+
+	#footer .footer-top .logo {
+			flex-direction: row;
+			align-items: center;
+			gap: 8px;
+	}
+
+	#footer .footer-top .logo img {
+			height: 40px; /* mesma altura do PC */
+			width: auto; /* garante a proporção */
+	}
+
+	#footer .footer-top .logo .logo-text {
+			font-size: 14px;
+			letter-spacing: 3px;
+	}
+
+	#footer .footer-top .logo span {
+			font-size: 12px;
+			letter-spacing: 4px;
+			text-align: start;
+	}
 }
 
 
@@ -940,7 +1064,7 @@ a:hover {
 	border: 1px solid #ddd;
 	border-radius: 10px;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	width: 300px;
+	width: 285px;
 	padding: 20px;
 	text-align: center;
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1551,7 +1675,6 @@ p.apresentacao {
 /* Estilo para o contêiner */
 .about-container {
 	display: flex;
-	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
 	gap: 20px;
@@ -1579,26 +1702,60 @@ p.apresentacao {
 	border-radius: 10px;
 }
 
+.about-image-column {
+	flex: 1; /* This will make the column take available space */
+	display: flex; /* Make it a flex container */
+	flex-direction: column; /* Stack the images vertically */
+	gap: 20px; /* Space between the two images in the column */
+}
+
+/* Styles for images within the column */
+.about-image-column .about-image {
+    flex: 1; /* Each image in the column takes equal space */
+    max-width: 100%; /* Ensure they take full width of their column */
+}
+
+.about-image-column .about-image img {
+    width: 100%; /* Make images within the column fill their container */
+    height: auto;
+    border-radius: 10px;
+}
+
 .about-text {
 	flex: 2;
 	max-width: 60%;
 	max-height: 70%;
 	text-align: justify;
+	font-family: 'Poppins', sans-serif;
+	background-color: rgb(88, 35, 44);
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+	border: #b07937 solid 1px;
+}
+
+.about-text p {
+	font-weight: lighter;
 }
 
 /* Ajuste para telas menores */
 @media screen and (max-width: 768px) {
 
+	p.apresentacao {
+		font-size: 1em;
+		font-weight: 900;
+	}
 	.secao {
 		padding-top: 60px;
 	}
+
 
 	.modal-content {
 		margin: 50% auto;
 	}
 
 	.about-container {
-		flex-direction: column;
+		flex-direction: column-reverse;
 		/* Empilha os itens verticalmente */
 		text-align: center;
 		/* Centraliza o texto */
@@ -1640,7 +1797,6 @@ p.apresentacao {
 		display: flex;
 		text-align: end;
 		padding-right: 3%;
-		/* Mostra o menu quando ativado */
 	}
 
 	.cards-container {
@@ -1651,6 +1807,10 @@ p.apresentacao {
 	.card {
 		width: 85%;
 	}
+
+  .cards-container .card:last-child {
+    margin-bottom: 50px;
+  }
 
 }
 
