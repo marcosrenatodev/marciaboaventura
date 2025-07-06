@@ -54,6 +54,10 @@ Como é um projeto HTML + CSS +JS, basta abrir o `index.html` com o seu navegado
 
 Caso esteja utilizando o VS Code, clique com o botão direto no corpo do arquio `index.html` e escolha a opção `Open with live server` (também irá abrir no navegador)
 
+## Demonstração
+[Demonstração](https://github.com/user-attachments/assets/974cb720-7f14-46ce-bcc4-02114b1ab343)
+
+
 ## Contato
 
 Para dúvidas ou mais informações, sinta-se à vontade para entrar em contato.
