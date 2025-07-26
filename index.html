@@ -11,6 +11,7 @@
   <meta name="description" content="Marcia Boaventura Advocacia: serviços jurídicos estratégicos em Direito Civil, Família, Direito do Consumidor e Criminal. Atendimento humanizado e estratégico.">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/blog-index.css" />
   <noscript>
     <link rel="stylesheet" href="assets/css/noscript.css" />
   </noscript>
@@ -57,6 +58,7 @@
       <li><a href="#main">Início</a></li>
       <li><a href="#about">Sobre</a></li>
       <li><a href="#areas-atuacao">Áreas de Atuação</a></li>
+      <li><a href="#blog" class="active">Blog</a></li>
       <li><a href="#" class="abrirModal">Contato</a></li>
     </ul>
   </nav>
@@ -250,6 +252,24 @@
 
     </div>
   </section>
+<section class="secao" id="blog">
+  <div class="wrapper">
+    <div class="header">
+      <h1>Blog</h1>
+      <p class="blog-intro">Não deixe de conferir o último post do nosso blog</p>
+      <div class="blog-highlight">
+        <a href="/blog/cobranca-indevida-o-que-fazer-quando-voce-e-cobrado-indevidamente.html" class="highlight-card">
+          <div class="highlight-image"></div>
+          <div class="highlight-overlay">
+            <span class="category">Direito do Consumidor</span>
+            <h2 class="title">Cobrança Indevida: o que fazer quando você é cobrado indevidamente?</h2>
+            <p class="excerpt">Saiba como agir e proteger seus direitos quando empresas cobram valores indevidos.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer id="footer">
@@ -293,103 +313,8 @@
       </button>
     </div>
   </div>
-  <script>
-    window.onload = function () {
-      document.body.classList.remove("is-preload");
-    };
-
-    const modal = document.getElementById("modalContato");
-    const btnsAbrirModal = document.querySelectorAll(".abrirModal");
-    const btnFecharModal = document.getElementsByClassName("close")[0];
-    const btnEnviarWhatsApp = document.getElementById("enviarWhatsApp");
-    function abrirModal() {
-      modal.style.display = "block";
-    }
-    btnsAbrirModal.forEach((btn) => {
-      btn.onclick = function () {
-        abrirModal();
-      };
-    });
-
-    btnFecharModal.onclick = function () {
-      modal.style.display = "none";
-    };
-
-    window.onclick = function (event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    };
-
-    btnEnviarWhatsApp.onclick = function () {
-      const nome = document.getElementById("nome").value;
-      const assunto = document.getElementById("assunto").value;
-      const numeroWhatsApp = "5541997085626";
-
-      if (nome.trim() === "") {
-        alert("O nome é obrigatório.");
-        return;
-      }
-
-      let mensagem = `Olá Dra. Marcia. Sou ${nome} e estou entrando em contato através do site. `;
-      if (assunto.trim() !== "") {
-        mensagem += `\nAssunto:\n${assunto}`;
-      }
-
-      const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(
-        mensagem
-      )}`;
-      window.open(url, "_blank");
-      modal.style.display = "none";
-      document.getElementById("nome").value = "";
-      document.getElementById("assunto").value = "";
-    };
-
-    const navbarToggle = document.getElementById("navbar-toggle");
-    const navbarMenu = document.getElementById("navbar-menu");
-
-    navbarToggle.onclick = function () {
-      navbarMenu.classList.toggle("show");
-    };
-    const navbarLinks = document.querySelectorAll("#navbar-menu a");
-
-    navbarLinks.forEach((link) => {
-      link.onclick = function () {
-        navbarMenu.classList.remove("show");
-        if (link.classList.contains("abrirModal")) {
-          abrirModal();
-        }
-      };
-    });
-
-    window.ontouchmove = function () {
-      navbarMenu.classList.remove("show");
-    };
-
-    function configurarCartaoExpandido(cardId) {
-      const card = document.getElementById(cardId);
-      const closeButton = card.querySelector(".close-card");
-
-      card.onclick = function (event) {
-        if (!card.classList.contains("expanded")) {
-          card.classList.add("expanded");
-        }
-      };
-
-      // Fecha o cartão ao clicar no botão de fechar
-      closeButton.onclick = function (event) {
-        event.stopPropagation(); // Impede que o clique no botão reabra o cartão
-        card.classList.remove("expanded");
-      };
-
-    }
-
-    // Configurar os cartões
-    configurarCartaoExpandido("card-direito-civil");
-    configurarCartaoExpandido("card-direito-consumidor");
-    configurarCartaoExpandido("card-direito-penal");
-    configurarCartaoExpandido("card-direito-familia");
-  </script>
+<script src="js/main.js"></script>
+<script src="js/cards.js"></script>
   <a href="https://wa.me/5541997085626" class="icon brands fa-whatsapp fa-2x" target="_blank" id="whatsapp-icon">
   </a>
 </body>
