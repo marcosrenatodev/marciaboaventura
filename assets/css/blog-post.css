@@ -4,6 +4,18 @@
   --accent: #b07937;
   --border-color: #d9d9d9;
   --shadow-color: rgba(0, 0, 0, 0.2);
+	--cor-tema: #3b0912;
+	--verde-whatsapp: #25D366;
+}
+*{
+  text-align: left;
+}
+#navbar {
+  position: relative; /* dá contexto para o UL */
+}
+a {
+  color: #3b0912;
+  text-decoration: underline;
 }
 
 #main-content {
@@ -11,8 +23,12 @@
   padding: 2rem 1rem;
 }
 
+#main-content strong{
+  font-weight: bold;
+}
+
 .blog-post {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   padding: clamp(1rem, 4vw, 2rem);
   line-height: 1.7;
@@ -26,7 +42,7 @@
 }
 
 .blog-post h1 {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-size: 1.5em;
   margin-bottom: 1rem;
   font-weight: 600;
   line-height: 1.3;
@@ -45,12 +61,11 @@
 
 .blog-post h2 {
   font-size: 1.4rem;
-  border-left: 4px solid var(--accent);
-  padding-left: 0.8rem;
   margin-bottom: 0.6rem;
   display: flex;
-  align-items: center;
+  align-items: left;
   gap: 0.5rem;
+  font-weight: 600;
 }
 
 .blog-post ul,
@@ -71,6 +86,30 @@
   text-align: center;
   border-top: 1px dashed #bbb;
   padding-top: 1rem;
+}
+
+blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+  border-left: 4px solid var(--cor-tema);
+
+}
+
+ol {
+  list-style: decimal;
+  margin-left: 20px;
+  font-weight: b;
+}
+ol li::marker {
+  font-weight: bold;
+}
+ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+a#whatsapp-icon {
+  color: white;
 }
 
 @media (max-width: 600px) {

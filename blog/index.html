@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Blog - Dra. Márcia Boaventura</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Artigos de Direito Civil, Direito do Consumidor e Direito Penal por Dra. Márcia Boaventura." />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/blog-post.css" />
+  <noscript>
+    <link rel="stylesheet" href="../assets/css/noscript.css" />
+  </noscript>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="logo">
+      <img src="/assets/css/images/logo.jpeg" alt="Logo" />
+    </div>
+    <button id="navbar-toggle" class="hamburger">&#9776;</button>
+    <ul id="navbar-menu">
+      <li><a href="../index.html#main">Início</a></li>
+      <li><a href="../index.html#about">Sobre</a></li>
+      <li><a href="../index.html#areas-atuacao">Áreas de Atuação</a></li>
+      <li><a href="/blog" class="active">Blog</a></li>
+      <li><a href="#" class="abrirModal">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- Conteúdo principal -->
+  <section class="secao">
+    <div class="wrapper">
+      <main id="main-content">
+        <article class="blog-post">
+          <header>
+            <h1>Blog</h1>
+            <p class="author">Artigos recentes da Dra. Márcia Boaventura</p>
+          </header>
+
+          <!-- Lista de artigos -->
+          <section>
+            <ul>
+              <li>
+                <h2>
+                  <a href="cobranca-indevida-o-que-fazer-quando-voce-e-cobrado-indevidamente.html">
+                    Cobrança Indevida: o que fazer quando você é cobrado indevidamente?
+                  </a>
+                </h2>
+                <p>
+                  Saiba como agir e conhecer seus direitos quando uma empresa cobra valores que você não deve.
+                </p>
+              </li>
+              <!-- Para novos posts, basta adicionar mais <li> aqui -->
+            </ul>
+          </section>
+        </article>
+      </main>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="inner">
+      <ul class="copyright">
+        <li>&copy; Márcia Boaventura. Todos os direitos reservados.</li>
+      </ul>
+    </div>
+  </footer>
+
+  <div id="modalContato" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Contato WhatsApp</h2>
+      <label for="nome">Qual seu nome?*</label>
+      <input type="text" id="nome" name="nome" required />
+      <label for="assunto">Assunto:</label>
+      <textarea id="assunto" name="assunto"></textarea>
+      <button class="icon brands fa-whatsapp" id="enviarWhatsApp">
+        Enviar mensagem
+      </button>
+    </div>
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/cards.js"></script>
+</body>
+
+</html>
