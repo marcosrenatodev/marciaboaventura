@@ -1860,3 +1860,19 @@ p.apresentacao {
 #whatsapp-icon:hover {
 	transform: scale(1.1);
 }
+.blog-card {
+  display: block;
+  background: var(--bg-post, rgba(255,255,255,0.85));
+  border: 1px solid var(--accent, #b07937);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  color: var(--text-dark, #1e1e1e);
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
